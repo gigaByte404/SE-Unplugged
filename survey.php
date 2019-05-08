@@ -95,7 +95,7 @@ ob_start();
                       <thead>
                         <tr>
                           <th>ID</th>
-                          <th>Image Link</th>
+                          <th>Survey Image</th>
 
                         </tr>
                       </thead>
@@ -112,14 +112,14 @@ ob_start();
                           {
                             echo"<tr class='gradeC'>
                             <td>".$id."</td>
-                            <td><a href='$img_url'>".$img_url."</a></td>
+                            <td><img src='$img_url'></td>
                             </tr>";
                           }
                           else
                           {
                             echo"<tr class='gradeU'>
                             <td>".$id."</td>
-                            <td>".$img_url."</td>
+                            <td><img src='$img_url'></td>
                             </tr>";
 
                           }
@@ -152,7 +152,7 @@ ob_start();
                         <div class="modal-body">
                           <div class="form-group">
                             <label>Upload Image</label>
-                            <input name="fileToUpload" class="form-control" type="file" id="fileToUpload">
+                            <input name="fileToUpload" class="form-control" type="file" id="fileToUp">
 
                           </div>
                         </div>

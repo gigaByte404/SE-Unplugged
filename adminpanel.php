@@ -75,6 +75,9 @@ if(!isset($_SESSION["user"]))
           <li> 
             <a  href="surveydata.php"><i class="fa fa-qrcode"></i> Add Survey Results</a>
           </li>
+          <li> 
+            <a  href="survey.php"><i class="fa fa-qrcode"></i> Uploaded Surveys</a>
+          </li>
 
           <li>
             <a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>

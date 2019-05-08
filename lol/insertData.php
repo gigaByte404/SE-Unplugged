@@ -1,9 +1,8 @@
 <?php 
 	include "db.php";
 	$target_dir = "./uploads/";
-	// echo "$target_dir";\
+	// echo "$target_dir";
 	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-	var_dump($_FILES['fileToUpload']['name']);
 	$uploadOk = 1;
 	// echo "$target_file";
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -40,22 +39,26 @@
 	// if everything is ok, try to upload file
 	} else {
 	    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-	    	echo "";
-	        // echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+	        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
 	    } else {
-	        echo "<script>alert('Sorry, there was an error uploading your file.');</script>";
+	        echo "Sorry, there was an error uploading your file.";
 	    }
 	}
 
 
-	if (!empty($target_file)) {
+
+
+
+	if (!empty($target_file))  {
 		# code...
+		echo "<br><br><br>$target_file<br>";
 		$insertQuery = "INSERT INTO surveydata(img_url) VALUES ('$target_file')";
 		
 		$result = mysqli_query($con, $insertQuery);
 		// echo mysqli_error($con);
 		mysqli_close($con);
-		echo "<script>alert('Survey File is Uploaded');</script>";
-		echo "<script>window.location.href='survey.php';</script>";		
+		// header("Location: surveydata.php");
 	}
+
+
  ?>
